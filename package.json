@@ -9,7 +9,7 @@
 		"test": "jest",
 		"prettier": "npx prettier --write src/**/*.{ts,tsx}",
 		"lint": "tsc --noEmit && eslint --fix --ext ts,tsx ./",
-		"cm": "git-cz",
+		"cm": "git add . && git cz",
 		"release": "standard-version",
 		"release:major": "yarn run release --release-as major --no-verify",
 		"release:minor": "yarn run release --release-as minor --no-verify",
@@ -19,7 +19,8 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "lint-staged && yarn cm"
+			"pre-commit": "lint-staged",
+			"pre-push": "echo prepush"
 		}
 	},
 	"lint-staged": {
