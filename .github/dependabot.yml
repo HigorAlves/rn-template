@@ -4,12 +4,12 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-			day: "sunday"
-		 assignees:
+      day: "sunday"
+    assignees:
       - "higoralves"
-		commit-message:
+    commit-message:
       prefix: "dependabot"
       include: "scope"
-		reviewers:
+    reviewers:
       - "higoralves"
-		target-branch: "main"
+    target-branch: "main"
