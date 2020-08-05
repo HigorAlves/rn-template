@@ -1,0 +1,3 @@
+{
+  "extends": ["@higoralves/eslint-config/react/ts/native"]
+}
