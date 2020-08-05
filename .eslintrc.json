@@ -1,3 +1,13 @@
 {
-	"extends": ["@higoralves/eslint-config/react/ts/native"]
+	"extends": ["@higoralves/eslint-config/react/ts/native"],
+	"rules": {
+		"import-helpers/order-imports": [
+			"warn",
+			{
+				"newlinesBetween": "always",
+				"groups": ["/react/", "/ˆreact/", "module", "/^@/Config/", "/^@/Lib/","/^@/Services/","/^@/Store/","/^@/Hooks/","/^@/Routers/","/^@/Containers/","/^@/Components/","/^@/View/", ["parent", "sibling", "index"]],
+				"alphabetize": { "order": "asc", "ignoreCase": true }
+			}
+		]
+	}
 }

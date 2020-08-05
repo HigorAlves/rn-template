@@ -16,7 +16,7 @@ module.exports = {
 					'@Routers': './src/Routers',
 					'@Services': './src/Services',
 					'@Store': './src/Store',
-					'@View': './src/View',
+					'@Views': './src/Views',
 				},
 			},
 		],

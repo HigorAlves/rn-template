@@ -20,12 +20,12 @@
 	"husky": {
 		"hooks": {
 			"pre-commit": "lint-staged",
-			"pre-push": "echo prepush"
+			"pre-push": "yarn run jest -b -o"
 		}
 	},
 	"lint-staged": {
 		"src/*.{tsx,ts}": [
-			"pretty-quick --staged && npm run lint"
+			"pretty-quick --staged && yarn run lint"
 		]
 	},
 	"dependencies": {

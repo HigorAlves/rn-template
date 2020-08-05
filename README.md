@@ -1,11 +1,55 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 # React Native Typescript Template
 
+This project is a [React Native](http://reactnative.dev) boilerplate that can be used to kickstart a mobile application.
+
+The boilerplate provides an architecture optimized for building solid cross-platform mobile applications through separation of concerns between the UI and business logic. It is extremely documented so that each piece of code that lands in your application can be understood and used.
+
 > If you love this boilerplate, give us a star, you will be a ray of sunshine in our lives :star:
 
-## Getting Started
+## Architecture
+The driving goal of the architecture of the boilerplate is separation of concerns. Namely:
 
-## Installation
+- Presentational components are separated from containers (aka "views").
+
+- State is managed using global Redux stores.
+
+- Application side-effects (API calls, etc.) are separated from UI and state manipulation using Redux Saga.
+
+## Content
+The boilerplate contains:
+
+- React Native (v0.63.0) application (in "ejected" mode to allow using dependencies that rely on native code)
+- Clear directory layout to provide a base architecture for your application
+- Absolute Paths to avoid ```../..``` hell
+- Prettier and Eslint configured for React Native
+- Commitlint to help your team adhering to a commit convention
+- Lint staged to help your team push only validated codes
+- Standard Version a utility for versioning using semver and CHANGELOG generation
+
+## Directory layout
+
+## Updates
+
+## Requirements
+
+# Using the boilerplate
+To create a new project using the boilerplate:
+
+- clone this repository
+- remove the previous git history: rm -rf .git/
+- install the npm dependencies by running yarn
+- rename the React Native project to your own project name: yarn run rename -- <YourProjectName> (the default name is Boilerplate)
+- remove the LICENSE file and the "License" section from the README if your project is not open source
+- Feel free to remove the section "Using the boilerplate" from the README (you will not need it anymore in your project). You are encouraged to keep the rest of the documentation in your project so that it is self-explanatory.
+
+You can now create a new git repository for your project (using git init) and create the first commit.
+
+## Running the project
+Assuming you have all the requirements installed, you can setup and run the project by running:
+create your configuration file App/Config/index.js from index.dev.js (if you are in dev environment) and fill the missing values
+run the following steps for your platform
+
 
 ## How to commit
 
