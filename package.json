@@ -8,11 +8,12 @@
 		"start": "react-native start",
 		"test": "jest",
 		"prettier": "npx prettier --write src/**/*.{ts,tsx}",
-		"lint": "tsc --noEmit && eslint --ext .js,.jsx,.ts,.tsx ./"
+		"lint": "tsc --noEmit && eslint --ext .js,.jsx,.ts,.tsx ./",
+		"cm": "git-cz"
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "pretty-quick --staged && npm run lint"
+			"pre-commit": "pretty-quick --staged && npm run lint && yarn cm"
 		}
 	},
 	"dependencies": {
@@ -32,6 +33,7 @@
 		"@typescript-eslint/parser": "^2.27.0",
 		"babel-eslint": "^10.1.0",
 		"babel-jest": "^25.1.0",
+		"cz-conventional-changelog": "^3.2.0",
 		"eslint": "^6.5.1",
 		"eslint-config-airbnb": "^18.2.0",
 		"eslint-config-prettier": "^6.11.0",
@@ -63,5 +65,10 @@
 			"json",
 			"node"
 		]
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
 	}
 }
