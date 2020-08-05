@@ -1,6 +1,8 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 # React Native Typescript Template
 
+> If you love this boilerplate, give us a star, you will be a ray of sunshine in our lives :star:
+
 ## Getting Started
 
 ## Installation
