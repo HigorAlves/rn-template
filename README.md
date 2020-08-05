@@ -5,6 +5,20 @@
 
 ## Installation
 
+## How to commit
+
+Instead use the classic command ```git add . & git commit -m "<message>"``` you have to use:
+
+```
+yarn cm
+
+or
+
+npm run cm
+```
+
+This is because we have a pre configured commit style.
+
 ## Running your React Native application
 ### Step 1: Start Metro
 First, you will need to start Metro, the JavaScript bundler that ships with React Native.
@@ -23,3 +37,5 @@ or
 
 npx react-native run-android
 ```
+
+## Testing
