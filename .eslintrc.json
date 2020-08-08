@@ -1,6 +1,7 @@
 {
 	"extends": ["@higoralves/eslint-config/react/ts/native"],
 	"rules": {
+		"import/prefer-default-export": "off",
 		"no-use-before-define":"off",
 		"import-helpers/order-imports": [
 			"warn",

@@ -1,0 +1,14 @@
+{
+	"bail": 1,
+	"collectCoverageFrom": ["src/**/*.{js,jsx,tsx}",  "!**/node_modules/**", "!android", "!ios", "!docs" ],
+	"coverageDirectory": "coverage",
+	"preset": "react-native",
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js",
+			"jsx",
+			"json",
+			"node"
+		]
+}

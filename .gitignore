@@ -49,3 +49,4 @@ android/keystores/debug.keystore
 
 # Local variables
 .env
+coverage/

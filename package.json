@@ -6,7 +6,11 @@
 		"android": "react-native run-android",
 		"ios": "react-native run-ios",
 		"start": "react-native start",
-		"test": "jest",
+		"test": "jest -o --silent",
+		"test:watch": "jest -o --watch --silent",
+		"test:coverage": "jest -u --ci --silent --coverage",
+		"test:ci": "jest -u --ci --silent --verbose",
+		"serve:coverage": "serve coverage/lcov-report",
 		"prettier": "npx prettier --write src/**/*.{ts,tsx}",
 		"lint": "tsc --noEmit && eslint --fix --ext ts,tsx ./",
 		"cm": "git add . && git cz",
@@ -20,7 +24,7 @@
 	"husky": {
 		"hooks": {
 			"pre-commit": "lint-staged",
-			"pre-push": "yarn run jest -b -o"
+			"pre-push": "yarn test:ci"
 		}
 	},
 	"lint-staged": {
@@ -67,6 +71,7 @@
 		"prettier": "^2.0.4",
 		"pretty-quick": "^2.0.1",
 		"react-test-renderer": "16.13.1",
+		"serve": "^11.3.2",
 		"standard-version": "^8.0.2",
 		"typescript": "^3.8.3"
 	},
@@ -80,7 +85,7 @@
 			"json",
 			"node"
 		]
-	},
+		},
 	"config": {
 		"commitizen": {
 			"path": "./node_modules/cz-conventional-changelog"
