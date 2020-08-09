@@ -11,6 +11,12 @@ on:
     branches:
       - main
       - develop
+    paths:
+      - 'src/**.{js,jsx}'
+      - 'src/**.{ts,tsx}'
+      - 'package.json'
+      - 'yarn.lock'
+
 jobs:
   test:
     name: Test
