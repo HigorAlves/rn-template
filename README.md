@@ -1,4 +1,5 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+![Jest Tests](https://github.com/HigorAlves/rn-template/workflows/Jest%20Tests/badge.svg)
 # React Native Typescript Template
 
 This project is a [React Native](http://reactnative.dev) boilerplate that can be used to kickstart a mobile application.
