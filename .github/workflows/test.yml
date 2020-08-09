@@ -4,6 +4,9 @@ on:
     branches:
       - main
       - develop
+    paths:
+      - 'src/**.{js,jsx}'
+      - 'src/**.{ts,tsx}'
   pull_request:
     branches:
       - main
