@@ -1,6 +1,6 @@
 {
 	"bail": 1,
-	"collectCoverageFrom": ["src/**/*.{js,jsx,tsx}",  "!**/node_modules/**", "!android", "!ios", "!docs" ],
+	"collectCoverageFrom": ["src/**/*.{js,jsx,tsx,ts}",  "!**/node_modules/**", "!android", "!ios", "!docs" ],
 	"coverageDirectory": "coverage",
 	"preset": "react-native",
 		"moduleFileExtensions": [

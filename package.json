@@ -10,7 +10,7 @@
 		"test:watch": "jest -o --watch --silent",
 		"test:coverage": "jest -u --ci --silent --coverage",
 		"test:ci": "jest -u --ci --silent --verbose",
-		"serve:coverage": "serve coverage/lcov-report",
+		"serve:coverage": "open http://localhost:5000/ && serve coverage/lcov-report",
 		"prettier": "npx prettier --write src/**/*.{ts,tsx}",
 		"lint": "tsc --noEmit && eslint --fix --ext ts,tsx ./",
 		"cm": "git add . && git cz",
@@ -85,7 +85,7 @@
 			"json",
 			"node"
 		]
-		},
+	},
 	"config": {
 		"commitizen": {
 			"path": "./node_modules/cz-conventional-changelog"
