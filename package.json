@@ -19,7 +19,8 @@
 		"release:minor": "yarn run release --release-as minor --no-verify",
 		"release:patch": "yarn run release --release-as patch --no-verify",
 		"release:alpha": "yarn run release --prerelease alpha --no-verify",
-		"release:beta": "yarn run release --prerelease beta --no-verify"
+		"release:beta": "yarn run release --prerelease beta --no-verify",
+		"podlink": "npx pod-install ios"
 	},
 	"husky": {
 		"hooks": {
@@ -33,8 +34,15 @@
 		]
 	},
 	"dependencies": {
+		"@react-native-community/masked-view": "^0.1.10",
+		"@react-navigation/native": "^5.7.3",
+		"@react-navigation/stack": "^5.9.0",
 		"react": "16.13.1",
-		"react-native": "0.63.0"
+		"react-native": "0.63.0",
+		"react-native-gesture-handler": "^1.7.0",
+		"react-native-reanimated": "^1.10.2",
+		"react-native-safe-area-context": "^3.1.4",
+		"react-native-screens": "^2.10.1"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.8.4",
