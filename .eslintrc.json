@@ -2,13 +2,27 @@
 	"extends": ["@higoralves/eslint-config/react/ts/native"],
 	"rules": {
 		"import/prefer-default-export": "off",
-		"no-use-before-define":"off",
+		"no-use-before-define": "off",
 		"@typescript-eslint/interface-name-prefix": "off",
 		"import-helpers/order-imports": [
-			"warn",
+			"error",
 			{
+				"groups": [
+					"/react/",
+					"/ˆ@react/",
+					"module",
+					"/^@/Config/",
+					"/^@/Lib/",
+					"/^@/Services/",
+					"/^@/Store/",
+					"/^@/Hooks/",
+					"/^@/Routers/",
+					"/^@/Containers/",
+					"/^@/Components/",
+					"/^@/View/",
+					["parent", "sibling", "index"]
+				],
 				"newlinesBetween": "always",
-				"groups": ["/react/", "/ˆreact/", "module", "/^@/Config/", "/^@/Lib/","/^@/Services/","/^@/Store/","/^@/Hooks/","/^@/Routers/","/^@/Containers/","/^@/Components/","/^@/View/", ["parent", "sibling", "index"]],
 				"alphabetize": { "order": "asc", "ignoreCase": true }
 			}
 		]
