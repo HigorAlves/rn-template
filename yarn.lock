@@ -690,7 +690,7 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.5", "@babel/runtime@^7.11.2", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.8.4":
   version "7.11.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.11.2.tgz#f549c13c754cc40b87644b9fa9f09a6a95fe0736"
   integrity sha512-TeWkU52so0mPtDcaCTxNBI/IHiz0pZgr8VEFqXFtZWpYD08ZB6FaSwVAS8MKRQAP3bYKiVjwysOJgMFY28o6Tw==
@@ -3421,12 +3421,12 @@ eslint-plugin-react-hooks@^4.1.2:
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.1.2.tgz#2eb53731d11c95826ef7a7272303eabb5c9a271e"
   integrity sha512-ykUeqkGyUGgwTtk78C0o8UG2fzwmgJ0qxBGPp2WqRKsTwcLuVf01kTDRAtOsd4u6whX2XOC8749n2vPydP82fg==
 
-eslint-plugin-react-native-a11y@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react-native-a11y/-/eslint-plugin-react-native-a11y-2.0.2.tgz#aed30f49fe2696db1c918a42eb34df9a5ec48b69"
-  integrity sha512-PmB7iL0g0k9iDPANWM9F6c/DXh3YwHCZ4WupMDgNPr24//38UjvEQYXWsB/L/eK6lvCBZUgQtx2/jqZhjo64Tg==
+eslint-plugin-react-native-a11y@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-native-a11y/-/eslint-plugin-react-native-a11y-2.0.3.tgz#119c4b476bc317cdf40ed5ba4597d62d3ef4f7e5"
+  integrity sha512-LQCTxnMrN/+vYdwGYOvlubZXT1qJRTQj6U9F3YS+0NDnlqt1xgnepfojDmtCmulbjrzRVbQBtsi+wxLUq++C6A==
   dependencies:
-    "@babel/runtime" "^7.10.5"
+    "@babel/runtime" "^7.11.2"
     ast-types-flow "^0.0.7"
     jsx-ast-utils "^2.4.1"
 
