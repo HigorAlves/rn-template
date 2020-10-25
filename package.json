@@ -50,7 +50,7 @@
 		"@higoralves/eslint-config": "^0.2.1",
 		"@react-native-community/eslint-config": "^1.1.0",
 		"@react-native-community/eslint-plugin": "^1.1.0",
-		"@types/jest": "^26.0.13",
+		"@types/jest": "^26.0.15",
 		"@types/react-native": "^0.63.18",
 		"@types/react-test-renderer": "^16.9.2",
 		"@typescript-eslint/eslint-plugin": "^2.27.0",
