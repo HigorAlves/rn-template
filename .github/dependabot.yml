@@ -5,11 +5,7 @@ updates:
     schedule:
       interval: "weekly"
       day: "sunday"
-    assignees:
-      - "higoralves"
     commit-message:
       prefix: "dependabot"
       include: "scope"
-    reviewers:
-      - "higoralves"
     target-branch: "main"

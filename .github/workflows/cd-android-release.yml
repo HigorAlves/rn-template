@@ -1,0 +1,76 @@
+name: CD - Android Release
+
+on:
+  push:
+    branches: release
+    paths-ignore:
+      - '*.md'
+
+jobs:
+  ios:
+    runs-on: macos-latest
+    timeout-minutes: 50
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Yarn Cache
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Gradle Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Install Dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn
+
+      - name: Run tests
+        run: yarn test:ci
+
+      - name: Generate the SSH Key
+        run: |
+          echo "${{ secrets.SSH_KEY }}" > ssh_key.asc
+          gpg -d --passphrase ${{ secrets.SSH_KEY_PASSWORD }} --batch ssh_key.asc > ssh_key
+          chmod 600 ./ssh_key
+
+      - name: Generate the Keystore
+        run: |
+          echo "${{ secrets.ANDROID_KEY }}" > app-key.asc
+          gpg -d --passphrase ${{ secrets.SSH_KEY_PASSWORD }} --batch app-key.asc > android/app/app-key.keystore
+
+      - name: Generate the PlayStore API key
+        run: |
+          echo "${{ secrets.PLAYSTOREAPI }}" > playstore-key.asc
+          gpg -d --passphrase ${{ secrets.SSH_KEY_PASSWORD }} --batch playstore-key.asc > fastlane/playstore-key.json
+
+      - name: Create a new Keychain
+        uses: maierj/fastlane-action@v1.4.0
+        with:
+          lane: 'setup'
+          skip-tracking: true
+
+      - name: Build Android and deploy to playStore
+        uses: maierj/fastlane-action@v1.4.0
+        env:
+          LC_ALL: 'en_US.UTF-8'
+          LANG: 'en_US.UTF-8'
+          FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
+          FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+          SIGNING_IDENTITY: ${{ secrets.SIGNING_IDENTITY }}
+          ANDROID_STORE_PASSWORD: ${{ secrets.ANDROID_STORE_PASSWORD }}
+        with:
+          lane: 'android release'
+          skip-tracking: true

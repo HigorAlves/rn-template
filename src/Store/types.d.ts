@@ -1,18 +1,40 @@
-import * as Example from './example/types';
+type PeopleTypes = import('./people/types')
 
-export namespace RootTypes {
-	export type StateType = {
-		example: Example.Type.StateType;
-	};
+declare namespace StoreTypes {
+  type StateType = {
+    people: PeopleTypes.State
+  }
 
-	export type ActionTypes = Example.Type.ActionType;
+  type ActionTypes = PeopleTypes.Actions
 
-	export type ContextType = {
-		state: StateType;
-		dispatch: React.Dispatch<ActionTypes>;
-	};
+  type ContextType = {
+    state: StateType
+    dispatch: ActionOrThunk
+  }
 
-	type Props = {
-		children: React.ReactChild;
-	};
+  type Selector = {
+    people: PeopleTypes.Selector
+  }
+
+  type useStore = {
+    state: StateType
+    dispatch: ActionOrThunk
+    selectors: Selector
+  }
+
+  type Props = {
+    children: React.ReactNode
+  }
+
+  type ActionOrThunk = (
+    dispatch: React.Dispatch<ActionType>
+  ) => void | ActionType
+
+  type Dispatcher = React.Dispatch<ActionType>
+}
+
+declare type ActionMap<M extends { [index: string]: unknown }> = {
+  [Key in keyof M]: M[Key] extends undefined
+    ? { type: Key }
+    : { type: Key; payload: M[Key] }
 }

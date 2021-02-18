@@ -1,14 +1,20 @@
 {
-	"bail": 1,
-	"collectCoverageFrom": ["src/**/*.{js,jsx,tsx,ts}",  "!**/node_modules/**", "!android", "!ios", "!docs" ],
-	"coverageDirectory": "coverage",
-	"preset": "react-native",
-		"moduleFileExtensions": [
-			"ts",
-			"tsx",
-			"js",
-			"jsx",
-			"json",
-			"node"
-		]
+  "bail": 1,
+  "testEnvironment": "jsdom",
+  "collectCoverageFrom": [
+    "src/**/*.{js,jsx,tsx,ts}",
+    "!**/node_modules/**",
+    "!docs",
+    "!e2e"
+  ],
+  "coverageDirectory": "coverage",
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+  "testPathIgnorePatterns": ["/node_modules/", "/.next/", "/e2e"],
+  "moduleNameMapper": {
+    "@/(.*)": ["<rootDir>/src/$1"],
+    "@Components": ["<rootDir>/src/components/index.ts"],
+    "@Containers": ["<rootDir>/src/containers/index.ts"],
+    "@Screens": ["<rootDir>/src/screens/index.ts"],
+    "@Store": ["<rootDir>/src/store/index.ts"]
+  }
 }

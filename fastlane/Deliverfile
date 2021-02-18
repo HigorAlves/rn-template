@@ -1,0 +1,19 @@
+# The Deliverfile allows you to store various App Store Connect metadata
+# For more information, check out the docs
+# https://docs.fastlane.tools/actions/deliver/
+
+submit_for_review(true)
+automatic_release(true)
+metadata_path("./ios/metadata")
+screenshots_path("./ios/screenshots")
+app_icon('./ios/metada/app-icon.png')
+
+app_review_information(
+  first_name: "Higor",
+  last_name: "Alves",
+  phone_number: "+55 00000000000",
+  email_address: "higor.alves@natahouse.com",
+  demo_user: "demo",
+  demo_password: "demo",
+  notes: "Thanks for rewing my app <3"
+)

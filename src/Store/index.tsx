@@ -1,17 +1,31 @@
-import React, { createContext, useReducer, useContext } from 'react';
+import React, { createContext, useContext, useReducer } from 'react'
 
-import { Reducer, initialState } from './store';
-import { RootTypes } from './types';
+import withThunk from 'utils/withThunk'
 
-const StoreContext = createContext<RootTypes.ContextType>({} as RootTypes.ContextType);
+import { initialState, Reducer } from 'store/rootReducer'
+import { selectors as Selector } from 'store/rootSelectors'
 
-export const StoreProvider: React.FC<RootTypes.Props> = ({ children }: RootTypes.Props): React.ReactElement => {
-	const [state, dispatch] = useReducer(Reducer, initialState);
+const StoreContext = createContext<StoreTypes.ContextType>({
+  state: initialState
+} as StoreTypes.ContextType)
 
-	return <StoreContext.Provider value={{ state, dispatch }}>{children}</StoreContext.Provider>;
-};
+export const StoreProvider: React.FC<StoreTypes.Props> = ({
+  children
+}: StoreTypes.Props): JSX.Element => {
+  const [state, dispatch] = useReducer(Reducer, initialState)
 
-export const useStore = (): RootTypes.ContextType => {
-	const { state, dispatch } = useContext(StoreContext);
-	return { state, dispatch };
-};
+  return (
+    <StoreContext.Provider value={{ state, dispatch: withThunk(dispatch) }}>
+      {children}
+    </StoreContext.Provider>
+  )
+}
+
+const useStore = (): StoreTypes.useStore => {
+  const { state, dispatch } = useContext(StoreContext)
+  const selectors = Selector()
+
+  return { state, dispatch, selectors }
+}
+
+export default useStore

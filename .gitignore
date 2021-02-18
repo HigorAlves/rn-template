@@ -1,17 +1,6 @@
 # OSX
 .DS_Store
 
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-
 # Xcode
 build/
 *.pbxuser
@@ -29,13 +18,16 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
-project.xcworkspace
-/ios/Pods/
 
-# Android/IJ
+# Android/IntelliJ
+build/
 .idea
 .gradle
 local.properties
+*.iml
+
+# Visual Studio Code
+.vscode/
 
 # node.js
 node_modules/
@@ -45,9 +37,31 @@ yarn-error.log
 # BUCK
 buck-out/
 \.buckd/
-android/app/libs
-android/keystores/debug.keystore
+*.keystore
+!debug.keystore
 
-# Local variables
-.env
-coverage/
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/
+
+*/fastlane/report.xml
+*/fastlane/Preview.html
+*/fastlane/screenshots
+*.cer
+*.certSigningRequest
+*.p12
+*.app
+
+# Bundle artifact
+*.jsbundle
+
+# CocoaPods
+/ios/Pods/
+
+.idea/
+
+android/app/app-key.keystore
+fastlane/playstore-key.json

@@ -1,0 +1,5 @@
+app_identifier("com.natahouse.dev")               # The bundle identifier of your app
+apple_dev_portal_id("nataci@natahouse.com")       # Apple Developer Account
+team_id("NYXB3D9CK6")                             # Developer Portal Team ID
+json_key_file("./fastlane/playstore-key.json") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
+package_name("com.natahouse") # e.g. com.krausefx.app

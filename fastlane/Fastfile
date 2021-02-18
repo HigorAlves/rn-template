@@ -1,0 +1,20 @@
+import "./bump-version.Fastfile"
+import "./android.Fastfile"
+import "./ios.Fastfile"
+
+lane :setup do
+  setup_project
+end
+
+private_lane :setup_project do
+    if is_ci?
+      create_keychain(
+        name: "actiontest_keychain",
+        password: "natahouse",
+        default_keychain: true,
+        unlock: true,
+        timeout: 3600,
+        lock_when_sleeps: false
+      )
+    end
+  end

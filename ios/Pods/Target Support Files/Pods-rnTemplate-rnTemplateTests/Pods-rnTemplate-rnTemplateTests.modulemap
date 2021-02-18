@@ -1,6 +1,0 @@
-module Pods_rnTemplate_rnTemplateTests {
-  umbrella header "Pods-rnTemplate-rnTemplateTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
